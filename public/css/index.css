@@ -1,4 +1,69 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+
 body {
   background: #000;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #container {
+  max-width: 90%;
+  margin: auto;
+  padding: 1em;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #container #data_container {
+  margin-bottom: 2em;
+}
+
+body #container #sign_in_container {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #container #sign_in_container h1 {
+  font-size: 2rem;
+}
+
+body #container #sign_in_container #provider_btn {
+  border-radius: 100%;
+  width: 20%;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+}
+
+body #container #sign_in_container #provider_btn img {
+  max-width: 100%;
+}
+
+body #container #sign_in_container #provider_btn:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */

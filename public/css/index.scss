@@ -1,3 +1,58 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    padding: 0;
+}
+
+
+
 body{
     background: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    #container{
+        max-width: 90%;
+        margin: auto;
+        padding: 1em;
+        box-shadow: 0 0 1em #fff;
+        display: flex;
+        flex-direction: column;
+
+
+        #data_container{
+            margin-bottom: 2em;
+        }
+
+
+
+        #sign_in_container{
+            margin-left: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            h1{
+                font-size: 2rem;
+            }
+            
+            #provider_btn{
+                border-radius: 100%;
+                width: 20%;
+                box-shadow: 0 0 1em #fff;
+                
+                img{
+                    max-width: 100%;
+                }
+            }
+
+            #provider_btn:hover{
+                cursor: pointer;
+            }
+        }
+    }
 }
