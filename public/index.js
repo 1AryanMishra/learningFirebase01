@@ -44,7 +44,8 @@ provider_btn.addEventListener("click", () => {
         signInWithPopup(auth, providerGoogle).then(
             (result) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
-                data.textContent = `${result.user}`;
+                console.log(resul.user);
+                data.textContent = `${JSON.parse(result.user)}`;
                 auth_msg.textContent = "Sign Out";
                 logged_in = true;
             }).catch((error) => {
