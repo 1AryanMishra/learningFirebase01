@@ -3,7 +3,7 @@ import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from 'https://w
 
 var provider_btn = document.querySelector("#provider_btn");
 var auth_msg = document.querySelector("#auth_msg");
-var user_name = document.querySelector("#name");
+var data = document.querySelector("#name");
 
 const config = {
     apiKey: "AIzaSyCiUPzj8pODh1yxkRG-0b8aw4PIf8FLnjQ",
