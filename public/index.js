@@ -3,7 +3,8 @@ import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from 'https://w
 
 var provider_btn = document.querySelector("#provider_btn");
 var auth_msg = document.querySelector("#auth_msg");
-var data = document.querySelector("#name");
+var user_name = document.querySelector("#user_name");
+var user_dp = document.querySelector("#user_dp");
 
 const config = {
     apiKey: "AIzaSyCiUPzj8pODh1yxkRG-0b8aw4PIf8FLnjQ",
@@ -28,12 +29,13 @@ const providerGoogle = new GoogleAuthProvider();
 
 
 
- var logged_in = false;
+var logged_in = false;
 provider_btn.addEventListener("click", () => {
     if(logged_in){
         signOut(auth).then(()=>{
             auth_msg.textContent = "Sign In with Google";
-            data.textContent = "Hi User!, Please Sign In with Google to see your data.";
+            user_name.textContent = "Hi User!, Please Sign In with Google to see your data.";
+            user_dp.style = "display : none";
             logged_in = false;
         }).catch((error) => {
             auth_msg.textContent = "An error happend. Please try again.";
@@ -45,9 +47,10 @@ provider_btn.addEventListener("click", () => {
             (result) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 console.log(result);
-                console.log(result.users);
-                console.log(result.users.displayName);
-                data.textContent = `${result.users.displayName}`;
+                console.log(result.user);
+                user_dp.style = "display : inline-block";
+                user_dp.src = `${result.user.photoURL}`;
+                user_name.textContent = `${result.user.displayName}`;
                 auth_msg.textContent = "Sign Out";
                 logged_in = true;
             }).catch((error) => {
