@@ -1,5 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js'
+import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+import { getDoc, doc } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+
 
 var provider_btn = document.querySelector("#provider_btn");
 var auth_msg = document.querySelector("#auth_msg");
@@ -31,6 +33,7 @@ const providerGoogle = new GoogleAuthProvider();
 
 var logged_in = false;
 provider_btn.addEventListener("click", () => {
+    const user;
     if(logged_in){
         signOut(auth).then(()=>{
             auth_msg.textContent = "Sign In with Google";
@@ -50,7 +53,8 @@ provider_btn.addEventListener("click", () => {
                 console.log(result.user);
                 user_dp.style = "display : inline";
                 user_dp.src = `${result.user.photoURL}`;
-                user_name.textContent = `${result.user.displayName}`;
+                user = result.user.email;
+                user_name.textContent = `Hello, ${result.user.firstName}`;
                 auth_msg.textContent = "Sign Out";
                 logged_in = true;
             }).catch((error) => {
@@ -59,4 +63,7 @@ provider_btn.addEventListener("click", () => {
             }
         );
     }
+    const user_data_snap = await getDoc(doc(db, "users", `${user}`));
+    console.log(user_data_snap);
+    console.log(user_data_snap.data());
 })
