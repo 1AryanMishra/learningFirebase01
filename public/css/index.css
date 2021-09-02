@@ -37,14 +37,16 @@ body #container #data_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 body #container #data_container img {
+  display: none;
   border-radius: 100%;
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;

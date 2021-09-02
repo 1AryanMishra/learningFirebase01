@@ -27,10 +27,11 @@ body{
         #data_container{
             margin-bottom: 2em;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
             
             img{
+                display: none;
                 border-radius: 100%;
                 box-shadow: 0 0 1em #fff;
                 width: 10%;

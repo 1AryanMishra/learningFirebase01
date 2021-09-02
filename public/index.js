@@ -48,7 +48,7 @@ provider_btn.addEventListener("click", () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 console.log(result);
                 console.log(result.user);
-                user_dp.style = "display : inline-block";
+                user_dp.style = "display : inline";
                 user_dp.src = `${result.user.photoURL}`;
                 user_name.textContent = `${result.user.displayName}`;
                 auth_msg.textContent = "Sign Out";
